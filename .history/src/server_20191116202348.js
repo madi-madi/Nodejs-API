@@ -11,7 +11,7 @@ app.use('/api/contacts',contactRoutes)
 
 // handdle error
 app.use((request , response,next)=>{
-    const error = new Error("Not Found 404");
+    const error = new Error();
     error.status = 404;
     next(error);
 })

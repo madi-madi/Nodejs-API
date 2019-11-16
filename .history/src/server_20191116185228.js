@@ -9,18 +9,5 @@ app.use(morgan('dev'));
 app.use('/api/contacts',contactRoutes)
 
 
-// handdle error
-app.use((request , response,next)=>{
-    const error = new Error("Not Found 404");
-    error.status = 404;
-    next(error);
-})
-
-app.use((error , request , response,next)=>{
-    response.status(error.status || 500)
-    response.json({
-        message: error.message
-    })
-})
 
 app.listen(PORT,()=> console.log('kkkkkkk'));
